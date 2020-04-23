@@ -79,3 +79,4 @@ gem 'omniauth-twitter'
 gem 'carrierwave', '~> 2.0'
 gem 'cloudinary'
 
+gem 'dropzonejs-rails'

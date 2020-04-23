@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
-  <%= link_to root_path , class: "navbar-brand" do %>
+<nav class="navbar navbar-expand flex-column flex-md-row bd-navbar">
+  <%= link_to root_path , class: "navbar-brand no-text-decoration normal-" do %>
     <i class="fa fa-camera"></i> RAILSINSTA
   <% end %>
   <div class="navbar-nav-scroll">
@@ -10,14 +10,15 @@
   <div class="navbar-nav flex-row ml-md-auto d-md-flex">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link" href="#">Twitter</a>
-        <a class="nav-item nav-link" href="#">Resume</a>
+        <a class="nav-item nav-link no-text-decoration normal-" href="#">Twitter</a>
+        <a class="nav-item nav-link no-text-decoration normal-" href="#">Resume</a>
         <% if user_signed_in? %>
-          <%= link_to user_path(current_user), class: "nav-item nav-link" do %>
+          <%= link_to user_path(current_user), class: "nav-item nav-link no-text-decoration normal-color" do %>
             <i class="fa fa-user"></i>
           <% end %>
         <% end %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-xs btn-danger nav-item nav-link" if user_signed_in? %>
+        
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-xs btn-danger nav-item nav-link " if user_signed_in? %>
       </div>
     </div>
   </div>

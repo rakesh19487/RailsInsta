@@ -14,10 +14,11 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require dropzone
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 //= require toastr
+
 
 toastr.options = Object.assign({}, toastr.options, {
     closeButton: true
