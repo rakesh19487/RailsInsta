@@ -18,3 +18,7 @@
 //= require turbolinks
 //= require_tree .
 //= require toastr
+
+toastr.options = Object.assign({}, toastr.options, {
+    closeButton: true
+});

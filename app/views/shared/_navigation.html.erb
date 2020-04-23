@@ -2,21 +2,23 @@
   <%= link_to root_path , class: "navbar-brand" do %>
     <i class="fa fa-camera"></i> RAILSINSTA
   <% end %>
-
   <div class="navbar-nav-scroll">
     <form class="form-inline my-2 my-lg-0 ml-auto">
       <input class="form-control" type="search" placeholder="Search" aria-label="Search">
     </form>
   </div>
-
   <div class="navbar-nav flex-row ml-md-auto d-md-flex">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="#">Twitter</a>
-          <a class="nav-item nav-link" href="#">Resume</a>
-          <a class="nav-item nav-link" href="#">Blog</a>
-        </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link" href="#">Twitter</a>
+        <a class="nav-item nav-link" href="#">Resume</a>
+        <% if user_signed_in? %>
+          <%= link_to user_path(current_user), class: "nav-item nav-link" do %>
+            <i class="fa fa-user"></i>
+          <% end %>
+        <% end %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-xs btn-danger nav-item nav-link" if user_signed_in? %>
       </div>
+    </div>
   </div>
 </nav>
-

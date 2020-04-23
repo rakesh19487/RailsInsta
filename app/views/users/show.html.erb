@@ -1,0 +1,45 @@
+<div class="bio-info">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="bio-image">
+            <%= gravatar_for @user, size: 150%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="bio-content">
+        <h4><%= @user.username  ? @user.username.capitalize : "Please add name =>"%>
+		  <%= link_to "Edit Profile ", edit_user_registration_path, class: "btn btn-xs btn-dark"%>	
+          <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#userProfileModal">
+            <i class="fas fa-cog"></i>
+          </button>
+        </h4>
+        <h5><%= @user.email %></h5>
+      </div>
+    </div>
+  </div>
+</div>
+<%#  Modal Content Here  %>
+<div class="modal fade" id="userProfileModal" tabindex="-1" role="dialog" aria-labelledby="userProfileModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="userProfileModalLabel">Settings</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%# <div class="modal-body"> %>
+        <div class="list-group">
+          <button type="button" class="list-group-item list-group-item-action">Change Password</button>
+		  <%= link_to " Log out", destroy_user_session_path, method: :delete, class: "list-group-item list-group-item-action"%>
+          <button type="button" class="list-group-item list-group-item-action" data-dismiss="modal">Cancel</button>
+        </div>
+      <%# </div> %>
+    </div>
+  </div>
+</div>
+<%#  Modal Content Here  %>

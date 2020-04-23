@@ -14,9 +14,15 @@
             <div class="form-top">
               <div class="form-top-left">
                 <h3>Log In now</h3>
-                <%= render "shared/display_message" %>
+                <h6>OR Use</h6>
+              </div>
+              <div class="form-top-right">
+                <%= link_to user_twitter_omniauth_authorize_path , class: "btn btn-link-1 btn-link-1-twitter" do %>
+                    <i class="fab fa-twitter"></i> Twitter
+                <% end %>
               </div>
             </div>
+            <%= render "shared/display_message" %>
             <div class="form-bottom">
               <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "login-form"}) do |f| %>
                 <div class="form-group">
@@ -32,12 +38,6 @@
                   </p>
                 </div>
               <% end %>
-            </div>
-            <div class="social-login-form">
-              <h3> OR </h3>
-              <div class="social-login-buttons">
-                <%= render 'devise/shared/links'%>
-              </div>
             </div>
           </div>
         </div>

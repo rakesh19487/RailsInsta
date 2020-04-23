@@ -12,14 +12,11 @@ class ApplicationController < ActionController::Base
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:username, :bio, :website])
     end
 
 
     def after_sign_out_path_for(resource_or_scope)
-      p "lllllllllllllllllllllllllllllllllllll"
-      p resource_or_scope
-      p "lllllllllllllllllllllllllllllllllllll"
       root_path
     end
 end
