@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_many :photos, dependent: :destroy
 
   has_many :likes, -> {order(created_at: :desc) }
-
+  has_many :comments, -> {order(created_at: :desc)}
 
   validates_presence_of :content, message: "Content can't be blank"
 

@@ -33,22 +33,22 @@
             <div class="font-weight-bold" id="like-text-post-<%= post.id.to_s %>">
               <%= render "likes/like_text" , {likes: post.likes}%>
             </div>
-            <div>
-              <%############= Rendering Like text  in a partial ############################%>
-              <span class="font-weight-bold"><%= post.user.username %></span>
-              <span class="font-weight-light"><%= post.content %></span>
+            <%############= Rendering Like text  in a partial ############################%>
+            
+            <%############= Rendering Comments List in a partial ############################%>
+            <div id="comments-post-<%= post.id.to_s %>">
+              <%= render "comments/comment_list" , {post: post} %>
             </div>
+            <%############= Rendering Comments List in a partial ############################%>
             <p class="card-subtitle mb-2 text-muted light-color post-time">
               <%= link_to time_ago_in_words(post.created_at).upcase + " AGO", post_path(post), class: "card-subtitle mb-2 text-muted light-color post-time no-text-decoration"  %>
             </p>
             <hr>
-            <div class="row actions">
-              <form action="#" class="w-100">
-                <div>
-                  <textarea class="form-control comment-input border-0" placeholder="Add a comment..." rows="1"></textarea>
-                </div>
-              </form>
+            <%############= Rendering Comment form  in a partial ############################%>
+            <div class="row actions" id="comment-form-post<%= post.id.to_s %>">
+              <%= render 'comments/comment_form', {post: post} %>
             </div>
+            <%############= Rendering Comment form  in a partial ############################%>
           </div>
         </div>
       </div>

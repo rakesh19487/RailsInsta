@@ -29,12 +29,11 @@
             <span class="font-weight-light"><%= @post.content %></span>
           </div>
         <% end %>
-        <% 100.times do %>
-          <div>
-            <span class="font-weight-bold">Rajni</span>
-            <span class="font-weight-light">Coooool</span>
-          </div>
-        <% end %>
+        <%############= Rendering Comments List in a partial ############################%>
+        <div id="comments-post-<%= @post.id.to_s %>">
+          <%= render "comments/comment_list" , {post: @post} %>
+        </div>
+        <%############= Rendering Comments List in a partial ############################%>
       </div>
       <hr class="mt-0">
       <div class="row actions">
@@ -60,13 +59,11 @@
         <%= time_ago_in_words(@post.created_at).upcase %> AGO
       </p>
       <hr>
-      <div class="row actions">
-        <form action="#" class="w-100">
-          <div>
-            <textarea class="form-control comment-input border-0" placeholder="Add a comment..." rows="1"></textarea>
-          </div>
-        </form>
+      <%############= Rendering Comment form  in a partial ############################%>
+      <div class="row actions" id="comment-form-post<%= @post.id.to_s %>">
+        <%= render 'comments/comment_form', {post: @post} %>
       </div>
+      <%############= Rendering Comment form  in a partial ############################%>
     </div>
   </div>
 </div>

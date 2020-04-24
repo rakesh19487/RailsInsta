@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand flex-column flex-md-row bd-navbar">
-  <%= link_to root_path , class: "navbar-brand no-text-decoration normal-" do %>
+  <%= link_to root_path , class: "navbar-brand no-text-decoration normal-color" do %>
     <i class="fa fa-camera"></i> RAILSINSTA
   <% end %>
   <div class="navbar-nav-scroll">
@@ -10,8 +10,8 @@
   <div class="navbar-nav flex-row ml-md-auto d-md-flex">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link no-text-decoration normal-" href="#">Twitter</a>
-        <a class="nav-item nav-link no-text-decoration normal-" href="#">Resume</a>
+        <a class="nav-item nav-link no-text-decoration normal-color" href="#">Twitter</a>
+        <a class="nav-item nav-link no-text-decoration normal-color" href="#">Resume</a>
         <% if user_signed_in? %>
           <%= link_to user_path(current_user), class: "nav-item nav-link no-text-decoration normal-color" do %>
             <i class="fa fa-user"></i>

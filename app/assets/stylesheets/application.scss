@@ -728,7 +728,6 @@ footer a:focus {
 
 .no-text-decoration{
   text-decoration: none !important;
-  color: #262626 !important;
 }
 
 .post-card i{
@@ -753,5 +752,12 @@ footer a:focus {
   color: #262626;
 }
 
+.delete-comment{
+  width: 11px;
+  height: 11px;
+  float: right;
+  margin: 5px 0 0 10px;
+  font-size: 0.7rem
+}
 // ########################### Customize Post Views
 // ###############################   Post Index Css ###################################################

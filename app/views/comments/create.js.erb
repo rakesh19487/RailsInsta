@@ -1,0 +1,2 @@
+$("#comments-post-<%= @post.id.to_s %>").html('<%= j render "comment_list", {post: @post} %>')
+$('#comment-form-post<%= @post.id.to_s %> #comment_content').val("")

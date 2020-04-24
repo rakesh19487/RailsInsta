@@ -1,0 +1,11 @@
+<% post.comments.each do |comment| %>
+  <div class="mb-2">
+    <% if comment.user == current_user %>
+      <%= link_to comment_path(comment), method: :delete, remote: true, class: "delete-comment  normal-color no-text-decoration font-weight-light" do %>
+        <i class="fas fa-times " aria-hidden="true"></i>
+      <% end %>
+    <% end %>
+  </div>
+  <span class="font-weight-bold"><%= comment.user.username %></span>
+  <span class="font-weight-light"><%= comment.content %></span>
+<% end %>
