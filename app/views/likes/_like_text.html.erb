@@ -1,0 +1,15 @@
+<% likes.each_with_index do |like, index|%>
+  <% if likes.size == 1%>
+    <%= like.user.username %> <span class="font-weight-light"> likes this</span>
+  <% elsif like == likes.last %>
+    <span class="font-weight-light">and</span>
+    <%= + like.user.username %><span class="font-weight-light"> likes this</span>
+  <% elsif index > 1 %>
+    <span class="font-weight-light">and</span>
+    <%=  + (likes.size-index).to_s + " others " %><span class="font-weight-light"> likes this</span>
+  <% elsif index == likes.size-2 || index == 1 %>
+    <%= like.user.username %>
+  <% else %>
+    <%= like.user.username + ", "%>
+  <% end%>
+<% end %>

@@ -1,0 +1,9 @@
+<% if is_liked.present? %>
+  <%= link_to like_path(is_liked),method: :delete, remote: true , class: "normal-color no-text-decoration ml-2" do %>
+    <i class="fa fa-heart fa-1.5x  loved"></i>
+  <% end %>
+<% else %>
+  <%= link_to post_likes_path(post),method: :post, remote: true , class: "normal-color no-text-decoration ml-2 love" do %>
+    <i class="far fa-heart fa-1.5x"></i>
+  <% end %>
+<% end %>

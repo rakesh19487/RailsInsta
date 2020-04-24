@@ -1,0 +1,4 @@
+$('#like-icon-post-<%= @post.id.to_s %>').html('<%= link_to like_path(@like),method: :delete, remote: true , class: "normal-color no-text-decoration ml-2" do %><i class="fa fa-heart fa-1.5x loved"></i><% end %>');
+
+$("#like-text-post-<%= @post.id.to_s %>").html('<%= j render "like_text", {likes: @post.likes} %>');
+console.log("Created like Successfully");   

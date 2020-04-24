@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     before_action :set_post, only: [:show, :destroy]
 
     def index
-        @posts = Post.all.limit(10).includes(:photos, :user).order("created_at DESC")
+        @posts = Post.all.limit(10).includes(:photos, :user, :likes).order("created_at DESC")
         @post = Post.new
     end
     
@@ -19,13 +19,15 @@ class PostsController < ApplicationController
             flash[:notice] = "Saved successfully ..."
             redirect_to posts_path
         else
-            flash[:alert] = "#{@post.errors.full_messages.to_sentence}"
+            flash[:alert] = "Something went wrong"
             redirect_to posts_path
         end    
     end
     
-    def show
+    def show          
         @photos = @post.photos
+        @likes = @post.likes.includes(:user)
+        @is_liked = @post.is_liked(current_user)
     end
     
     def destroy

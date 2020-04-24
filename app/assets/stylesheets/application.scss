@@ -701,27 +701,26 @@ footer a:focus {
   }
 }
 
-.love {
-  background-position: -325px -329px;
-  height: 24px;
-  width: 24px;
-}
+// .love {
+//   background-position: -325px -329px;
+//   height: 24px;
+//   width: 24px;
+// }
 
 .loved{
-  @extend .love;
-  background-position: -182px -336px;
+  color: red;
 }
 
-.comment{
-  @extend .love;
-  background-position: -258px -175px;
-  margin-left: 8px;
-}
+// .comment{
+//   @extend .love;
+//   background-position: -258px -175px;
+//   margin-left: 8px;
+// }
 
-.bookmark{
-  @extend .love;
-  background-position: -150px -353px;
-}
+// .bookmark{
+//   @extend .love;
+//   background-position: -150px -353px;
+// }
 
 .normal-color{
   color: #262626 !important;
