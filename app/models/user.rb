@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :likes
   has_many :comments
+  has_many :bookmarks
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -25,5 +26,13 @@ class User < ApplicationRecord
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
     end
-  end         
+  end     
+  
+  def self.search(term)
+    if term
+      User.where("username ILIKE ?", "%#{term}%")
+    else
+      nil
+    end    
+  end  
 end

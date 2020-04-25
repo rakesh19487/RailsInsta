@@ -1,0 +1,1 @@
+$("#bookmark-icon-post-<%= @post.id.to_s %>").html('<%= link_to post_bookmarks_path(@post),method: :post, remote: true , class: "normal-color no-text-decoration bookmark" do %><i class="far fa-bookmark fa-1.5x"></i><% end %>');

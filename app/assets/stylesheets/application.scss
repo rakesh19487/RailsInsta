@@ -14,6 +14,8 @@ body {
   letter-spacing  : 0.8px;
   margin-top      : 20px;
   overflow: auto;
+  height: 100%;
+  width: 100%;
 }
 
 .core-sprite {
@@ -559,8 +561,8 @@ footer a:focus {
 
 .bio-image img {
   border-radius: 50%;
-  width        : 200px;
-  height       : 200px;
+  width        : 200px !important;
+  height       : 200px !important;
 }
 
 .bio-content {
@@ -761,3 +763,66 @@ footer a:focus {
 }
 // ########################### Customize Post Views
 // ###############################   Post Index Css ###################################################
+
+
+.profile-tab{
+  margin-top: 60px;
+
+  .nav-tabs{
+    border: 0;
+    border-top: 1px solid #ddd;
+    
+    .nav-item{
+      border-radius: 0;
+      border: 0;
+      border-top:  1px solid transparent;
+      margin-top: -1px;
+      padding: 10px 0;
+      background: transparent;
+      font-weight: bold;
+      color: #999;
+    }
+  
+    .nav-item.active{
+      color: #262626;
+      border-top: 1px solid #262626;
+    }
+  }
+
+  .post-stat{
+    position: absolute;
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    top: 0;
+    opacity: 0;
+  }
+
+  .col-4:hover .post-stat{
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 1;
+  }
+
+  .image-preview{
+    margin-bottom: 30px;
+  }
+}
+
+
+.search-result-item{
+  padding: 30px;
+}
+
+.search-result-item:hover{
+  background-color: #fafafa;
+}
+.popover{
+  border-radius: 0;
+}
+
+.popover-body{
+  background: #fff;
+  padding: 0;
+}

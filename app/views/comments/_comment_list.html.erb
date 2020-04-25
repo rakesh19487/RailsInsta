@@ -6,6 +6,8 @@
       <% end %>
     <% end %>
   </div>
-  <span class="font-weight-bold"><%= comment.user.username %></span>
+  <span class="font-weight-bold">
+    <%= link_to comment.user.username, user_path(comment.user), class: "no-text-decoration normal-color" %>
+  </span>
   <span class="font-weight-light"><%= comment.content %></span>
 <% end %>

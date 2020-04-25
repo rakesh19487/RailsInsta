@@ -27,9 +27,13 @@
         <% end %>
       </div>
     </div>
+    <div id="posts">
+      <%############= Rendering all Posts in a partial ############################%>
+      <%= render 'post_list'%>
+      <%############= Rendering all Posts in a partial ############################%>
+    </div>
   </div>
-</div>
 
-<%############= Rendering all Posts in a partial ############################%>
-<%= render 'post_list'%>
-<%############= Rendering all Posts in a partial ############################%>
+  <br>
+  <%= will_paginate @posts %>
+</div>

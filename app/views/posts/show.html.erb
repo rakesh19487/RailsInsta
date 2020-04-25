@@ -43,7 +43,14 @@
         </div>
         <%############= Rendering Like Icons in a partial ############################%>
         <a href="#" class="normal-color no-text-decoration ml-2"><i class="far fa-comment fa-1.5x"></i></a>
-        <a href="#" class="normal-color no-text-decoration ml-auto"><i class="far fa-bookmark fa-1.5x"></i></a>
+
+        <%############= Rendering Bookmark Icons in a partial ############################%>
+        <div class="ml-auto" id="bookmark-icon-post-<%= @post.id.to_s %>">
+          <%= render "bookmarks/bookmark_icon", {is_bookmarked: @post.is_bookmarked(current_user), post: @post} %>
+        </div>
+        <%############= Rendering Bookmark Icons in a partial ############################%>
+
+
       </div>
       <%############= Rendering Like text  in a partial ############################%>
       <div class="font-weight-bold" id="like-text-post-<%= @post.id.to_s %>">

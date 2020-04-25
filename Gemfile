@@ -80,3 +80,4 @@ gem 'carrierwave', '~> 2.0'
 gem 'cloudinary'
 
 gem 'dropzonejs-rails'
+gem 'will_paginate-bootstrap4'

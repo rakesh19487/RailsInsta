@@ -1,25 +1,29 @@
-<nav class="navbar navbar-expand flex-column flex-md-row bd-navbar">
-  <%= link_to root_path , class: "navbar-brand no-text-decoration normal-color" do %>
-    <i class="fa fa-camera"></i> RAILSINSTA
-  <% end %>
-  <div class="navbar-nav-scroll">
-    <form class="form-inline my-2 my-lg-0 ml-auto">
-      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-    </form>
-  </div>
-  <div class="navbar-nav flex-row ml-md-auto d-md-flex">
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <%= link_to root_path , class: "navbar-brand no-text-decoration normal-color" do %>
+      <i class="fa fa-camera"></i> RAILSINSTA
+    <% end %>
+    <%# <div class="navbar-nav flex-row ml-md-auto d-md-flex"> %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link no-text-decoration normal-color" href="#">Twitter</a>
-        <a class="nav-item nav-link no-text-decoration normal-color" href="#">Resume</a>
+      
+      <%= form_with( url: users_path, method: :get, remote: true, html: {class: "form-inline my-2 my-lg-0 ml-md-auto", id: "users-search"}) do  %>
+        <%= text_field_tag :term, params[:term] , class: "form-control text-center mr-sm-2", placeholder: "Search", autocomplete: "off"%>
+        <div id="users-result"></div>
+      <% end %>
+
+      <div class="navbar-nav ml-md-auto">
+        <a class="nav-item nav-link no-text-decoration normal-color" href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i>
+        </a>
+        <a class="nav-item nav-link no-text-decoration normal-color" href="#"><i class="fa fa-bell" aria-hidden="true"></i>
+        </a>
         <% if user_signed_in? %>
           <%= link_to user_path(current_user), class: "nav-item nav-link no-text-decoration normal-color" do %>
             <i class="fa fa-user"></i>
           <% end %>
         <% end %>
-        
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-xs btn-danger nav-item nav-link " if user_signed_in? %>
+        <%#= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-xs btn-danger nav-item nav-link " if user_signed_in? %>
       </div>
     </div>
+    <%# </div> %>
   </div>
 </nav>
