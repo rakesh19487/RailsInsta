@@ -73,7 +73,7 @@ gem 'font-awesome-rails'
 gem 'toastr-rails'
 
 
-gem 'omniauth', '~> 1.6', '>= 1.6.1'
+gem 'omniauth', '~> 1.9'
 gem 'omniauth-twitter'
 
 gem 'carrierwave', '~> 2.0'
